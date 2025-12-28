@@ -1,5 +1,5 @@
 name: On-demand Build
-
+run-name: Build ${{ github.event.client_payload.projectId }} – ${{ github.event.client_payload.deploymentId }}
 on:
   repository_dispatch:
     types: [run-build]
@@ -28,7 +28,7 @@ jobs:
           echo "Container is running....."
       - name: Run commands in container
         run: |
-          echo "$DEPLOYMENT_ID ____  $PROJECT_ID"
+          echo "::notice::Building project $PROJECT_ID"
       - name: Run build entrypoint
         run: |
           /home/app/main.sh
