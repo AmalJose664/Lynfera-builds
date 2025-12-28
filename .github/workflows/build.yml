@@ -26,3 +26,9 @@ jobs:
       - name: Run commands in container
         run: |
           echo "Container is running....."
+      - name: Run commands in container
+        run: |
+          echo "$DEPLOYMENT_ID ____  $PROJECT_ID"
+      - name: Run build entrypoint
+        run: |
+          /app/main.sh
