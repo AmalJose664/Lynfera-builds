@@ -10,7 +10,16 @@ jobs:
 
     container:
       image: ghcr.io/lynfera/build-runner:latest
-
+    env:
+      KAFKA_USERNAME: ${{ secrets.KAFKA_USERNAME }}
+      KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
+      CLOUD_BUCKET: ${{ secrets.CLOUD_BUCKET }}
+      CLOUD_ENDPOINT: ${{ secrets.CLOUD_ENDPOINT }}
+      CLOUD_SECRETKEY: ${{ secrets.CLOUD_SECRETKEY }}
+      CLOUD_ACCESSKEY: ${{ secrets.CLOUD_ACCESSKEY }}
+      CONTAINER_API_TOKEN: ${{ secrets.CONTAINER_API_TOKEN }}
+      STORAGE_SERVER_ENDPOINT: ${{ secrets.STORAGE_SERVER_ENDPOINT }}
+      API_ENDPOINT: ${{ secrets.API_ENDPOINT }}
     steps:
       - name: Run commands in container
         run: |
