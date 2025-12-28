@@ -11,6 +11,8 @@ jobs:
     container:
       image: ghcr.io/lynfera/build-runner:latest
     env:
+      DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
+      PROJECT_ID: ${{ github.event.client_payload.projectId }}
       KAFKA_USERNAME: ${{ secrets.KAFKA_USERNAME }}
       KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
       CLOUD_BUCKET: ${{ secrets.CLOUD_BUCKET }}
