@@ -1,0 +1,28 @@
+name: On-demand Build
+
+on:
+  repository_dispatch:
+    types: [run-build]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/YOUR_ORG/build-runner:latest
+
+    steps:
+      - name: Clone target repo
+        run: |
+          git clone ${{ github.event.client_payload.repo_url }} repo
+          cd repo
+          git checkout ${{ github.event.client_payload.ref }}
+
+      - name: Build
+        run: |
+          cd repo
+          ./build.sh
+
+      - name: Upload artifacts
+        run: |
+          echo "Upload step goes here"
