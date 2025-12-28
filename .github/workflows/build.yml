@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/lynfera/build-runner:latest
+      image: amal664/lynfera-builds
     env:
       DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
       PROJECT_ID: ${{ github.event.client_payload.projectId }}
