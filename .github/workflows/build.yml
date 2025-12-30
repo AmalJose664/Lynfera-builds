@@ -32,3 +32,22 @@ jobs:
       - name: Run build entrypoint
         run: |
           /home/app/main.sh
+
+          
+  error_handle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install kafkajs@2.2.4
+
+      - name: Report starting error
+        env:
+          KAFKA_USERNAME: ${{ secrets.KAFKA_USERNAME }}
+          KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
+        run: node scripts/produce.js
