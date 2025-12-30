@@ -50,4 +50,6 @@ jobs:
         env:
           KAFKA_USERNAME: ${{ secrets.KAFKA_USERNAME }}
           KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
+          DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
+          PROJECT_ID: ${{ github.event.client_payload.projectId }}
         run: node scripts/errorHandler.js
