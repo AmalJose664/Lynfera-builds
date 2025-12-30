@@ -50,4 +50,4 @@ jobs:
         env:
           KAFKA_USERNAME: ${{ secrets.KAFKA_USERNAME }}
           KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
-        run: node scripts/produce.js
+        run: node scripts/errorHandler.js
