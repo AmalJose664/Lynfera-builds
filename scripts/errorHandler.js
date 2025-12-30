@@ -47,9 +47,9 @@ async function handleActionsFailure() {
 	})
 	console.log("Message sent")
 	console.log("------------")
+	await producer.disconnect()
 }
 handleActionsFailure().then(()=>{
-	await producer.disconnect()
 	process.exit(0)
 }).catch((e) => {
 	console.log(e, "Failed to send erros")
