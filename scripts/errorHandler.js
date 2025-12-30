@@ -1,5 +1,5 @@
-import { Kafka } from "kafkajs";
-import { randomUUID } from "crypto"
+const { Kafka } = require('kafkajs');
+const { randomUUID } = require('crypto');
 
 const projectId = process.env.PROJECT_ID
 const deploymentId = process.env.DEPLOYMENT_ID
