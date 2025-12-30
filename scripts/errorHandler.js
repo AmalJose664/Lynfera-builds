@@ -21,7 +21,9 @@ async function handleActionsFailure() {
 		console.error("Ids not received")
 		process.exit(1)
 	}
+	console.log("Starting exec ")
 	await producer.connect()
+	console.log("Producer connected")
 	await producer.send({
 		topic: "deployment.updates", messages: [
 			{
@@ -43,6 +45,8 @@ async function handleActionsFailure() {
 			}
 		]
 	})
+	console.log("Message sent")
+	console.log("------------")
 }
 handleActionsFailure().catch((e) => {
 	console.log(e, "Failed to send erros")
