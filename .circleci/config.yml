@@ -26,7 +26,7 @@ jobs:
           command: |
             echo "Container is running....."
 
-       - run:
+      - run:
           name: Build notice
           command: |
             echo "::notice::Building project $PROJECT_ID"
