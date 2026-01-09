@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Build notice
           command: |
-            echo "::notice::Building project $PROJECT_ID"
+            echo "::notice::Building project => $PROJECT_ID --- deployment => $DEPLOYMENT_ID"
 
       - run:
           name: Run build entrypoint
