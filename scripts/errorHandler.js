@@ -39,7 +39,7 @@ async function handleActionsFailure() {
 							updateType: "ERROR",
 							updates: {
 								status: "FAILED",
-								error_message: "Failed to start build runner",
+								error_message: "Failed to start build runner / Build timeout exceeded",
 							}
 						}
 					}
