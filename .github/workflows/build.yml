@@ -10,6 +10,9 @@ jobs:
 
     container:
       image: amal664/lynfera-builds
+      options: >-
+        --memory=2g
+        --cpus=2
     env:
       DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
       PROJECT_ID: ${{ github.event.client_payload.projectId }}
