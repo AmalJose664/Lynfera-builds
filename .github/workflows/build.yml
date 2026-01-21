@@ -57,7 +57,4 @@ jobs:
           KAFKA_PASSWORD: ${{ secrets.KAFKA_PASSWORD }}
           DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
           PROJECT_ID: ${{ github.event.client_payload.projectId }}
-          JOB_CONCLUSION: ${{ needs.build.result }}           # "failure", "cancelled", "skipped"
-          JOB_OUTCOME: ${{ needs.build.outputs.outcome }}     # More detailed
-          FAILURE_REASON: ${{ toJSON(needs.build) }}
         run: node scripts/errorHandler.js
