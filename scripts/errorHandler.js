@@ -1,9 +1,7 @@
 const { Kafka } = require('kafkajs');
 const { randomUUID } = require('crypto');
 
-const jobConclusion = process.env.JOB_CONCLUSION;
-const failureReason = process.env.FAILURE_REASON;
-const outCome = process.env.JOB_OUTCOME‎
+
 const projectId = process.env.PROJECT_ID;
 const deploymentId = process.env.DEPLOYMENT_ID;
 const kafka = new Kafka({
@@ -19,7 +17,6 @@ const kafka = new Kafka({
 
 const producer = kafka.producer();
 
-console.log(jobConclusion, failureReason, outCome)
 
 async function handleActionsFailure() {
 	if (!projectId || !deploymentId) {
