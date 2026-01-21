@@ -1,8 +1,11 @@
 const { Kafka } = require('kafkajs');
 const { randomUUID } = require('crypto');
 
-const projectId = process.env.PROJECT_ID
-const deploymentId = process.env.DEPLOYMENT_ID
+const jobConclusion = process.env.JOB_CONCLUSION;
+const failureReason = process.env.FAILURE_REASON;
+const outCome = process.env.JOB_OUTCOME‎
+const projectId = process.env.PROJECT_ID;
+const deploymentId = process.env.DEPLOYMENT_ID;
 const kafka = new Kafka({
 	clientId: `build-server-error-handler-${projectId}-${deploymentId}`,
 	brokers: ["pkc-l7pr2.ap-south-1.aws.confluent.cloud:9092"],
@@ -12,9 +15,11 @@ const kafka = new Kafka({
 		password: process.env.KAFKA_PASSWORD,
 		mechanism: "plain"
 	},
-})
+});
 
-const producer = kafka.producer()
+const producer = kafka.producer();
+
+console.log(jobConclusion, failureReason, outCome)
 
 async function handleActionsFailure() {
 	if (!projectId || !deploymentId) {
