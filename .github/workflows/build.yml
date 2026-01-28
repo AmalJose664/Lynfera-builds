@@ -34,7 +34,7 @@ jobs:
             "${{ secrets.CLOUD_SECRETKEY }}" \
             "${{ secrets.CLOUD_ENDPOINT }}" \
             "${{ secrets.KAFKA_USERNAME }}" \
-            "${{ secrets.KAFKA_PASSWORD }}" | node script.js
+            "${{ secrets.KAFKA_PASSWORD }}" | node /app/script.js
 
           
   error_handle:
