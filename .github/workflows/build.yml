@@ -17,6 +17,7 @@ jobs:
     env:
       DEPLOYMENT_ID: ${{ github.event.client_payload.deploymentId }}
       PROJECT_ID: ${{ github.event.client_payload.projectId }}
+      SERVICE_TOKEN: ${{ github.event.client_payload.serviceToken }}
       CLOUD_BUCKET: ${{ secrets.CLOUD_BUCKET }}
       STORAGE_SERVER_ENDPOINT: ${{ secrets.STORAGE_SERVER_ENDPOINT }}
       API_ENDPOINT: ${{ secrets.API_ENDPOINT }}
